@@ -1,227 +1,93 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
-    abstract class factory
+   
+    abstract class servize
     {
-        public abstract Create chainik();
-        public abstract Create tarelka();
-        public abstract Create chashka();
-
+        public abstract Product1 chainik();
+        public abstract Product3 tarelka();
+        public abstract Product2 chashka();
+    
     }
 
-    class Kzafactory : factory
+    class KazakhstanFactory : servize
     {
-        public override Create chainik()
+        public override Product1 chainik()
         {
-            throw new NotImplementedException();
+            return new Chainik();
+            
         }
 
-        public override Create chashka()
+        public override Product2 chashka()
         {
-            throw new NotImplementedException();
+            return new Chashka();
         }
 
-        public override Create tarelka()
+        public override Product3 tarelka()
         {
-            throw new NotImplementedException();
-        }
-    }
-    class IndiaFactory : factory
-    {
-        public override Create chainik()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Create chashka()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Create tarelka()
-        {
-            throw new NotImplementedException();
+            return new Tarelka();
         }
     }
 
-    class ChainaFcatory : factory
+    class ChainaFactory : servize
     {
-        public override Create chainik()
+        public override Product1 chainik()
         {
-            throw new NotImplementedException();
+
+            return new Chainik();
         }
 
-        public override Create chashka()
+        public override Product2 chashka()
         {
-            throw new NotImplementedException();
+            return new Chashka();
         }
 
-        public override Create tarelka()
+        public override Product3 tarelka()
         {
-            throw new NotImplementedException();
+            return new Tarelka();
         }
     }
+
+    class IndiaFactory : servize
+    {
+        public override Product1 chainik()
+        {
+
+            return new Chainik();
+        }
+
+        public override Product2 chashka()
+        {
+            return new Chashka();
+        }
+
+        public override Product3 tarelka()
+        {
+            return new Tarelka();
+        }
+    }
+
+    abstract class Product1 { }
+    abstract class Product2 { }
+    abstract class Product3 { }
+    class Chainik : Product1 { }
+    class Chashka : Product2 { }
+    class Tarelka : Product3 { }
 
     class Program
     {
         static void Main(string[] args)
         {
-     
+            
         }
     }
+
+    
 }
 
-//public interface ServizFactory { }
-
-//public class ChinaFactory implements ServizFactory { }
-
-//public class KazakhstanFactory implements ServizFactory { }
-
-//public class IndiaFactory implements ServizFactory { }
-
-//public interface ServizFactory
-//{
-//    Chainik createChainik();
-//    Chashka createChashka();
-//    Tarelka createTarelka();
-//}
-
-//public class ChinaFactory implements ServizFactory
-//{
-//    @Override
-//    public Chainik createChainik()
-//{
-//    return new ChinaChainik();
-//}
-
-//@Override
-//    public Chashka createChashka()
-//{
-//    return new ChinaChashka();
-//}
-
-//@Override
-//    public Tarelka createTarelka()
-//{
-//    return new ChinaTarelka();
-//}
-//}
-
-//public class KazakhstanFactory implements ServizFactory
-//{
-//    @Override
-
-//    public Chainik createChainik()
-//{
-//    return new KazakhstanChainik();
-
-
-//    @Override
-//    public Chashka createChashka()
-//    {
-//        return new KazakhstanChashka();
-//    }
-
-//    @Override
-//    public Tarelka createTarelka()
-//    {
-//        return new KazakhstanTarelka();
-//    }
-
-
-//public class IndiaFactory implements ServizFactory
-//{
-//    @Override
-
-//    public Chainik createChainik()
-//{
-//    return new IndiaChainik();
-
-
-//    @Override
-//    public Chashka createChashka()
-//    {
-//        return new IndiaChashka();
-//    }
-
-//    @Override
-//    public Tarelka createTarelka()
-//    {
-//        return new IndiaTarelka();
-//    }
 
 
 
-//public class ChinaChashka implements Chashka
-//{
-//    public ChinaChashka()
-//{
-//    System.out.println("Create ChinaChashka");
-//}
-//}
-
-//public class ChinaChainik implements Chainik
-//{
-//    public ChinaChainik()
-//{
-//    System.out.println("Create ChinaChainik");
-//}
-
-//public class ChinaTarelka implements Tarelka
-//{
-//    public ChinaTarelka()
-//{
-//    System.out.println("Create ChinaTarelka");
-//}
-//}
-
-
-
-//public class KazakhstanChashka implements Chashka
-//{
-//    public KazakhstanChashka()
-//{
-//    System.out.println("Create KazakhstanChashka");
-//}
-//}
-
-//public class KazakhstanChainik implements Chainik
-//{
-//    public KazakhstanChainik()
-//{
-//    System.out.println("Create KazakhstanChainik");
-//}
-
-//public class KazakhstanTarelka implements Tarelka
-//{
-//    public KazakhstanTarelka()
-//{
-//    System.out.println("Create KazakhstanTarelka");
-//}
-//}
-
-
-
-//public class IndiaChashka implements Chashka
-//{
-//    public IndiaChashka()
-//{
-//    System.out.println("Create IndiaChashka");
-//}
-//}
-
-//public class IndiaChainik implements Chainik
-//{
-//    System.out.println("Create IndiaChainik");
-//    public IndiaChainik()
-//{
-//}
-
-//public class IndiaTarelka implements Tarelka
-//{
-//    public IndiaTarelka()
-//{
-//    System.out.println("Create IndiaTarelka");
-//}
-//}
